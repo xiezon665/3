@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>yyds</title>
+  
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Length Converter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        input, select, button {
+            margin: 10px;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Length Converter</h1>
+    <input type="number" id="inputValue" placeholder="Enter value in meters">
+    <select id="unit">
+        <option value="kilometers">Kilometers</option>
+        <option value="miles">Miles</option>
+        <option value="feet">Feet</option>
+    </select>
+    <button onclick="convert()">Convert</button>
+    <p id="result"></p>
+
+    <script>
+        function convert() {
+            const inputValue = document.getElementById('inputValue').value;
+            const unit = document.getElementById('unit').value;
+            let result = '';
+
+            if (unit === 'kilometers') {
+                result = (inputValue / 1000).toFixed(2) + ' kilometers';
+            } else if (unit === 'miles') {
+                result = (inputValue / 1609.34).toFixed(2) + ' miles';
+            } else if (unit === 'feet') {
+                result = (inputValue * 3.28084).toFixed(2) + ' feet';
+            }
+
+            document.getElementById('result').innerText = result;
+        }
+    </script>
+</body>
+</html>
+<!-- partial -->
+  
+</body>
+</html>
